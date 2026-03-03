@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 
 const GRID_SIZE = 15
 const WIN_SCORE = 25
-const SPEED_MS = 90
+const SPEED_MS = 290
 
 const DIRECTIONS = {
   UP: { x: 0, y: -1 },
