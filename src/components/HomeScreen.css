@@ -1,0 +1,29 @@
+.home-screen {
+  gap: 2rem;
+}
+
+.home-greeting {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pink-700);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.home-question {
+  font-size: 1.15rem;
+  color: var(--pink-600);
+  margin: 0;
+}
+
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.home-btn {
+  min-width: 140px;
+  min-height: 48px;
+}

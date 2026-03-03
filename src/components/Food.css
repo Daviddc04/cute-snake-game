@@ -1,0 +1,10 @@
+/* Fish stays in one cell until the cat eats it (static, no movement or animation) */
+.food-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(1.5rem, 8vw);
+  z-index: 1;
+  animation: none;
+  transition: none;
+}

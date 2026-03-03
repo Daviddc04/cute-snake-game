@@ -1,0 +1,21 @@
+.snake-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.snake-head-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.snake-head-emoji {
+  font-size: min(1.5rem, 8vw);
+}
+
+.snake-body {
+  font-size: min(1.25rem, 7vw);
+}

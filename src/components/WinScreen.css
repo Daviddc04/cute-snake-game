@@ -1,0 +1,33 @@
+.win-screen {
+  gap: 1.25rem;
+}
+
+.win-screen.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 242, 248, 0.95);
+  border-radius: var(--radius-lg);
+  justify-content: center;
+  z-index: 10;
+  padding: 2rem;
+}
+
+.win-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--pink-600);
+  margin: 0;
+}
+
+.win-sub {
+  font-size: 1.1rem;
+  color: var(--pink-500);
+  margin: 0;
+}
+
+.win-btn {
+  margin-top: 0.5rem;
+  min-height: 48px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

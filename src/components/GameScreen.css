@@ -1,0 +1,35 @@
+.game-screen {
+  gap: 1rem;
+}
+
+.game-prompt {
+  font-size: 1.2rem;
+  color: var(--pink-600);
+  margin: 0;
+}
+
+.game-play-btn {
+  min-height: 52px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.game-score {
+  font-size: 1.1rem;
+  color: var(--pink-600);
+}
+
+.game-score strong {
+  color: var(--pink-700);
+}
+
+.game-board-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-board-wrap .board {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  grid-template-rows: repeat(var(--grid-size), 1fr);
+  aspect-ratio: 1;
+  max-width: min(90vw, 360px);
+  background: var(--pink-100);
+  border: 3px solid var(--pink-300);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.board-cell {
+  background: var(--pink-50);
+  border: 1px solid var(--pink-200);
+}
