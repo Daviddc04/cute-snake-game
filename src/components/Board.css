@@ -10,6 +10,14 @@
   box-shadow: var(--shadow-lg);
   overflow: hidden;
   position: relative;
+  animation: none !important;
+  transition: none !important;
+}
+
+.board > * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
 }
 
 .board-cell {

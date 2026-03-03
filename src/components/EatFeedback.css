@@ -1,0 +1,16 @@
+.eat-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.eat-feedback-text {
+  font-size: min(1.25rem, 7vw);
+  font-weight: 700;
+  color: var(--pink-500);
+  animation: none;
+  transition: none;
+  transform: none;
+}

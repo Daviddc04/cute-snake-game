@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 
 const GRID_SIZE = 15
 const WIN_SCORE = 25
-const SPEED_MS = 290
+const DEFAULT_SPEED_MS = 290
 
 const DIRECTIONS = {
   UP: { x: 0, y: -1 },
@@ -27,12 +27,19 @@ function randomFoodNotOnSnake(snake) {
   return cell
 }
 
-export function useGameLogic() {
+export function useGameLogic(options = {}) {
+  const { onAteFood, speedMs = DEFAULT_SPEED_MS } = options
+  const onAteFoodRef = useRef(onAteFood)
+  onAteFoodRef.current = onAteFood
+  const speedMsRef = useRef(speedMs)
+  speedMsRef.current = speedMs
+
   const [snake, setSnake] = useState([{ x: Math.floor(GRID_SIZE / 2), y: Math.floor(GRID_SIZE / 2) }])
   const [food, setFood] = useState(() => randomFoodNotOnSnake([{ x: Math.floor(GRID_SIZE / 2), y: Math.floor(GRID_SIZE / 2) }]))
   const [direction, setDirectionState] = useState(DIRECTIONS.RIGHT)
   const [score, setScore] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [isWin, setIsWin] = useState(false)
 
@@ -40,6 +47,8 @@ export function useGameLogic() {
   const intervalRef = useRef(null)
   const scoreRef = useRef(0)
   scoreRef.current = score
+
+  const togglePause = useCallback(() => setIsPaused((p) => !p), [])
 
   const setDirection = useCallback((dir) => {
     if (!dir || !DIRECTIONS[dir]) return
@@ -63,6 +72,7 @@ export function useGameLogic() {
     setScore(0)
     setIsGameOver(false)
     setIsWin(false)
+    setIsPaused(false)
     setIsRunning(true)
   }, [])
 
@@ -76,12 +86,13 @@ export function useGameLogic() {
     nextDirectionRef.current = DIRECTIONS.RIGHT
     setScore(0)
     setIsRunning(false)
+    setIsPaused(false)
     setIsGameOver(false)
     setIsWin(false)
   }, [])
 
   useEffect(() => {
-    if (!isRunning || isGameOver || isWin) return
+    if (!isRunning || isGameOver || isWin || isPaused) return
 
     intervalRef.current = setInterval(() => {
       setSnake((prevSnake) => {
@@ -106,6 +117,7 @@ export function useGameLogic() {
         const newSnake = ateFood ? [newHead, ...prevSnake] : [newHead, ...prevSnake.slice(0, -1)]
 
         if (ateFood) {
+          onAteFoodRef.current?.(newHead)
           const nextScore = scoreRef.current + 1
           setScore(nextScore)
           if (nextScore >= WIN_SCORE) {
@@ -117,12 +129,12 @@ export function useGameLogic() {
 
         return newSnake
       })
-    }, SPEED_MS)
+    }, speedMsRef.current)
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
-  }, [isRunning, isGameOver, isWin, food])
+  }, [isRunning, isGameOver, isWin, isPaused, food])
 
   return {
     snake,
@@ -130,6 +142,8 @@ export function useGameLogic() {
     direction,
     score,
     isRunning,
+    isPaused,
+    togglePause,
     isGameOver,
     isWin,
     setDirection,

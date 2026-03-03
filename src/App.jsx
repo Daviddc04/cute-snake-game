@@ -12,10 +12,17 @@ export default function App() {
     setScreen('game')
   }
 
+  const handleGoHome = () => {
+    setScreen('home')
+    setDeviceType(null)
+  }
+
   return (
     <div className="app">
       {screen === 'home' && <HomeScreen onSelectDevice={handleSelectDevice} />}
-      {screen === 'game' && deviceType && <GameScreen deviceType={deviceType} />}
+      {screen === 'game' && deviceType && (
+        <GameScreen deviceType={deviceType} onGoHome={handleGoHome} />
+      )}
     </div>
   )
 }

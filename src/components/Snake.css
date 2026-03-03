@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
-  animation: none;
-  transition: none;
-  transform: none;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  will-change: auto;
+  contain: layout style paint;
 }
 
 .snake-head-img {
@@ -13,20 +15,23 @@
   height: 100%;
   object-fit: contain;
   border-radius: 4px;
-  animation: none;
-  transition: none;
-  transform: none;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  will-change: auto;
 }
 
 .snake-head-emoji {
   font-size: min(1.5rem, 8vw);
-  animation: none;
-  transition: none;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
 }
 
 .snake-body {
   font-size: min(1.25rem, 7vw);
-  animation: none;
-  transition: none;
-  transform: none;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  will-change: auto;
 }
