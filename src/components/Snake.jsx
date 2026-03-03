@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Snake.css'
 
-const CAT_SRC = { cat: '/assets/cat.JPG', cat2: '/assets/cat2.JPG', cat3: '/assets/cat3.JPG' }
+const CAT_SRC = { cat: '/assets/cat.JPG', cat2: '/assets/cat2.jpg', cat3: '/assets/cat3.jpg' }
 
 export function Snake({ snake, gridSize, selectedCat = 'cat' }) {
   const [headImgError, setHeadImgError] = useState(false)

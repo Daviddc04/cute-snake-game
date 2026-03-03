@@ -2,8 +2,8 @@ import './CatStore.css'
 
 const CATS = [
   { id: 'cat', src: '/assets/cat.JPG', unlockAt: 0, label: 'Cat 1' },
-  { id: 'cat2', src: '/assets/cat2.JPG', unlockAt: 7, label: 'Cat 2' },
-  { id: 'cat3', src: '/assets/cat3.JPG', unlockAt: 25, label: 'Cat 3' },
+  { id: 'cat2', src: '/assets/cat2.jpg', unlockAt: 7, label: 'Cat 2' },
+  { id: 'cat3', src: '/assets/cat3.jpg', unlockAt: 25, label: 'Cat 3' },
 ]
 
 export function CatStore({ maxScoreReached, selectedCat, onSelectCat }) {
