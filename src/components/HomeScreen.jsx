@@ -1,6 +1,6 @@
 import './HomeScreen.css'
 
-export function HomeScreen({ onSelectDevice }) {
+export function HomeScreen({ onSelectDevice, onExploreWorld }) {
   return (
     <div className="screen home-screen">
       <p className="home-greeting">hello babi this game is just for you</p>
@@ -21,6 +21,14 @@ export function HomeScreen({ onSelectDevice }) {
           💻 Computer
         </button>
       </div>
+      <p className="home-or">or</p>
+      <button
+        type="button"
+        className="btn btn-secondary home-btn"
+        onClick={onExploreWorld}
+      >
+        🌍 Explore World
+      </button>
     </div>
   )
 }

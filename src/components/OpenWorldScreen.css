@@ -1,0 +1,100 @@
+.open-world-screen {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+}
+
+.world-home-btn {
+  align-self: flex-end;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--pink-600);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.world-home-btn:hover {
+  color: var(--pink-700);
+}
+
+.world-instructions {
+  font-size: 0.85rem;
+  color: var(--pink-600);
+  margin: 0;
+  text-align: center;
+}
+
+.world-grid-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 3px solid var(--pink-300);
+  border-radius: var(--radius-lg);
+  background: var(--pink-100);
+  box-shadow: var(--shadow-lg);
+}
+
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--world-size), 1fr);
+  grid-template-rows: repeat(var(--world-size), 1fr);
+  aspect-ratio: 1;
+  width: 100%;
+  min-width: 280px;
+  position: relative;
+  pointer-events: none;
+}
+
+.world-grid > * {
+  pointer-events: auto;
+}
+
+.world-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(0.65rem, 2.2vw);
+  min-height: 8px;
+  min-width: 8px;
+}
+
+.world-entity {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(1rem, 4vw);
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.world-player {
+  z-index: 3;
+}
+
+.world-npc {
+  z-index: 2;
+}
+
+.world-press-e {
+  padding: 0.5rem 1rem;
+  background: var(--pink-200);
+  border: 2px solid var(--pink-400);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pink-700);
+}
+
+.world-press-e kbd {
+  background: var(--pink-100);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: inherit;
+}

@@ -1,0 +1,65 @@
+.dialogue-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(253, 242, 248, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.dialogue-modal {
+  background: var(--pink-50);
+  border: 3px solid var(--pink-300);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+
+.dialogue-modal--response {
+  text-align: center;
+}
+
+.dialogue-character {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pink-700);
+  margin: 0 0 0.75rem 0;
+}
+
+.dialogue-emoji {
+  font-size: 1.25rem;
+}
+
+.dialogue-prompt {
+  font-size: 1rem;
+  color: var(--pink-600);
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.dialogue-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dialogue-option-btn {
+  text-align: left;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+.dialogue-response-text {
+  font-size: 1rem;
+  color: var(--pink-600);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.dialogue-continue-btn {
+  padding: 0.5rem 1.5rem;
+}

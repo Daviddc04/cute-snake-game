@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { HomeScreen } from './components/HomeScreen'
 import { GameScreen } from './components/GameScreen'
+import { OpenWorldScreen } from './components/OpenWorldScreen'
 import './App.css'
 
 export default function App() {
@@ -12,6 +13,10 @@ export default function App() {
     setScreen('game')
   }
 
+  const handleExploreWorld = () => {
+    setScreen('world')
+  }
+
   const handleGoHome = () => {
     setScreen('home')
     setDeviceType(null)
@@ -19,10 +24,16 @@ export default function App() {
 
   return (
     <div className="app">
-      {screen === 'home' && <HomeScreen onSelectDevice={handleSelectDevice} />}
+      {screen === 'home' && (
+        <HomeScreen
+          onSelectDevice={handleSelectDevice}
+          onExploreWorld={handleExploreWorld}
+        />
+      )}
       {screen === 'game' && deviceType && (
         <GameScreen deviceType={deviceType} onGoHome={handleGoHome} />
       )}
+      {screen === 'world' && <OpenWorldScreen onGoHome={handleGoHome} />}
     </div>
   )
 }
