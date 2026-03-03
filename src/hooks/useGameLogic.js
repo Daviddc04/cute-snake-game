@@ -118,7 +118,7 @@ export function useGameLogic(options = {}) {
 
         if (ateFood) {
           onAteFoodRef.current?.(newHead)
-          const nextScore = scoreRef.current + 1
+          const nextScore = scoreRef.current + 3
           setScore(nextScore)
           if (nextScore >= WIN_SCORE) {
             setIsRunning(false)

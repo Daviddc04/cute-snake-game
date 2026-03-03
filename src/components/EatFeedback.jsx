@@ -10,7 +10,7 @@ export function EatFeedback({ position, visible }) {
         gridRow: position.y + 1,
       }}
     >
-      <span className="eat-feedback-text">+1</span>
+      <span className="eat-feedback-text">+3</span>
     </div>
   )
 }
