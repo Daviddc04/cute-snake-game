@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import './Snake.css'
 
-export function Snake({ snake, gridSize }) {
+const CAT_SRC = { cat: '/assets/cat.JPG', cat2: '/assets/cat2.JPG', cat3: '/assets/cat3.JPG' }
+
+export function Snake({ snake, gridSize, selectedCat = 'cat' }) {
   const [headImgError, setHeadImgError] = useState(false)
   const [head] = snake
   const body = snake.slice(1)
+  const headSrc = CAT_SRC[selectedCat] || CAT_SRC.cat
 
   return (
     <>
@@ -20,7 +23,7 @@ export function Snake({ snake, gridSize }) {
             <span className="snake-head-emoji" aria-hidden>🐱</span>
           ) : (
             <img
-              src="/assets/cat.JPG"
+              src={headSrc}
               alt="Snake head"
               className="snake-head-img"
               onError={() => setHeadImgError(true)}

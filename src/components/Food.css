@@ -5,6 +5,13 @@
   justify-content: center;
   font-size: min(1.5rem, 8vw);
   z-index: 1;
-  animation: none;
-  transition: none;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.food-cell * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
 }

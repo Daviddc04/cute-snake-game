@@ -23,8 +23,10 @@ A pink, cute Snake game built with React + Vite — just for you!
    ```
    Open the URL shown (e.g. `http://localhost:5173`) in your browser.
 
-3. **Optional: add the cat image**  
-   Place your cat image at `public/assets/cat.JPG`. If it’s missing, the snake head will show 🐱 until you add it.
+3. **Optional: add cat images**  
+   - `public/assets/cat.JPG` — default snake head (fallback: 🐱).  
+   - `public/assets/cat2.JPG` — unlock at score 7.  
+   - `public/assets/cat3.JPG` — unlock at score 25.
 
 ---
 

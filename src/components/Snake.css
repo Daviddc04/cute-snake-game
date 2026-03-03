@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
+  animation: none;
+  transition: none;
+  transform: none;
 }
 
 .snake-head-img {
@@ -10,12 +13,20 @@
   height: 100%;
   object-fit: contain;
   border-radius: 4px;
+  animation: none;
+  transition: none;
+  transform: none;
 }
 
 .snake-head-emoji {
   font-size: min(1.5rem, 8vw);
+  animation: none;
+  transition: none;
 }
 
 .snake-body {
   font-size: min(1.25rem, 7vw);
+  animation: none;
+  transition: none;
+  transform: none;
 }
